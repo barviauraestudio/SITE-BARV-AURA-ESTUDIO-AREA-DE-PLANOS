@@ -5,7 +5,15 @@ import CenterWrapper from './CenterWrapper'
 const FAQS = [
   {
     q: 'Qual a diferença real entre Éter e Aura?',
-    a: 'O conjunto de entregáveis é idêntico em ambos os planos. A única diferença é o volume: Éter entrega 6 posts e 2 vídeos por mês; Aura entrega 8 posts e 4 vídeos. A escolha depende do ritmo de presença que a sua marca precisa ter.',
+    a: 'O conjunto de entregáveis é idêntico em ambos os planos. A diferença é o volume e o branding: Éter entrega 6 posts e 2 vídeos por mês, com branding cobrado à parte (R$ 450); Aura entrega 8 posts e 4 vídeos com branding já incluso. A escolha depende do ritmo de presença que a sua marca precisa ter.',
+  },
+  {
+    q: 'O branding é obrigatório para começar?',
+    a: 'Não. Se sua marca já tem uma identidade visual estabelecida, partimos dela. O branding é indicado quando a identidade atual não traduz o posicionamento que você quer construir — ou quando a marca ainda não tem uma. No plano Aura, está incluso sem custo adicional. No Éter, é cobrado à parte por R$ 450.',
+  },
+  {
+    q: 'O que é o plano Personalizado e para quem é indicado?',
+    a: 'É para marcas cujas necessidades não se encaixam num volume fixo — seja por demanda maior, por um projeto pontual (lançamento, campanha, reposicionamento) ou por um mix de entregáveis fora do padrão. Construímos o escopo juntos, com precificação sob consulta.',
   },
   {
     q: 'Quantas revisões estão incluídas?',
@@ -16,12 +24,8 @@ const FAQS = [
     a: 'Para clientes na região de Urubici e Serra Catarinense, a captação presencial é realizada quando viável dentro do planejamento mensal. Para clientes remotos, fornecemos orientação técnica completa de ângulo, iluminação, postura e entrega de câmera.',
   },
   {
-    q: 'Qual o prazo para entrega dos conteúdos?',
-    a: 'O planejamento editorial e roteiros são entregues na primeira semana. Os conteúdos finais (vídeos editados, artes e copys) são entregues de forma escalonada ao longo do mês, respeitando o calendário editorial acordado.',
-  },
-  {
     q: 'Posso começar com Éter e migrar para Aura?',
-    a: 'Sim. O plano Éter é a porta de entrada ideal para marcas em fase de estruturação de presença. A migração para Aura pode ser feita a qualquer momento — geralmente recomendamos após o primeiro mês de alinhamento de marca estabelecido.',
+    a: 'Sim. O plano Éter é a entrada ideal para marcas em fase de estruturação. A migração para Aura pode ser feita a qualquer momento — geralmente recomendamos após o primeiro mês, quando o alinhamento de marca já está estabelecido e o ritmo de produção está calibrado.',
   },
 ]
 
@@ -43,22 +47,22 @@ export default function FAQ() {
   return (
     <section id="faq" className="section">
       <CenterWrapper>
-      <Reveal className="section-header">
-        <p className="section-eyebrow">Dúvidas Frequentes</p>
-        <h2 className="section-title"><em>FAQ</em></h2>
-        <div className="section-rule" />
-      </Reveal>
-      <Reveal className="faq-list">
-        {FAQS.map((faq, i) => (
-          <div key={i} className={`faq-item${openIndex === i ? ' open' : ''}`}>
-            <button className="faq-q" onClick={() => toggle(i)}>
-              {faq.q}
-              <PlusIcon />
-            </button>
-            <div className="faq-a">{faq.a}</div>
-          </div>
-        ))}
-      </Reveal>
+        <Reveal className="section-header">
+          <p className="section-eyebrow">Dúvidas Frequentes</p>
+          <h2 className="section-title"><em>FAQ</em></h2>
+          <div className="section-rule" />
+        </Reveal>
+        <Reveal className="faq-list">
+          {FAQS.map((faq, i) => (
+            <div key={i} className={`faq-item${openIndex === i ? ' open' : ''}`}>
+              <button className="faq-q" onClick={() => toggle(i)}>
+                {faq.q}
+                <PlusIcon />
+              </button>
+              <div className="faq-a">{faq.a}</div>
+            </div>
+          ))}
+        </Reveal>
       </CenterWrapper>
     </section>
   )
