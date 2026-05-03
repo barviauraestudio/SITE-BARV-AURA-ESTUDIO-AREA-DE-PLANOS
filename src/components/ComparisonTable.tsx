@@ -62,15 +62,12 @@ export default function ComparisonTable() {
           <div className="ct-row ct-row--branding">
             <div className="ct-cell feature-name">
               <span className="ct-branding-name">Branding</span>
-              <span className="ct-branding-sub">identidade visual</span>
             </div>
             <div className="ct-cell center" style={{ flexDirection: 'column', gap: 4 }}>
               <span className="ct-branding-price">R$ 450</span>
-              <span className="ct-branding-label">à parte</span>
             </div>
             <div className="ct-cell center" style={{ flexDirection: 'column', gap: 4 }}>
               <span className="check yes-rose">✓</span>
-              <span className="ct-branding-label">incluso</span>
             </div>
           </div>
 
