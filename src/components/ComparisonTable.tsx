@@ -30,18 +30,27 @@ export default function ComparisonTable() {
             <div className="ct-col-head plan-aura" style={{ textAlign: 'center' }}>Aura</div>
           </div>
 
+          {/* Volume rows — números em Cormorant */}
           <div className="ct-row">
             <div className="ct-cell feature-name">Posts / mês</div>
-            <div className="ct-cell center"><span className="ct-value">6<span> posts</span></span></div>
-            <div className="ct-cell center"><span className="ct-value">8<span> posts</span></span></div>
+            <div className="ct-cell center">
+              <span className="ct-value ct-serif">6<span className="ct-unit"> posts</span></span>
+            </div>
+            <div className="ct-cell center">
+              <span className="ct-value ct-serif">8<span className="ct-unit"> posts</span></span>
+            </div>
           </div>
-
           <div className="ct-row">
             <div className="ct-cell feature-name">Vídeos / mês</div>
-            <div className="ct-cell center"><span className="ct-value">2<span> vídeos</span></span></div>
-            <div className="ct-cell center"><span className="ct-value">4<span> vídeos</span></span></div>
+            <div className="ct-cell center">
+              <span className="ct-value ct-serif">2<span className="ct-unit"> vídeos</span></span>
+            </div>
+            <div className="ct-cell center">
+              <span className="ct-value ct-serif">4<span className="ct-unit"> vídeos</span></span>
+            </div>
           </div>
 
+          {/* Check rows */}
           {CHECK_ROWS.map((feature) => (
             <div className="ct-row" key={feature}>
               <div className="ct-cell feature-name">{feature}</div>
@@ -50,7 +59,7 @@ export default function ComparisonTable() {
             </div>
           ))}
 
-          {/* Branding row — destaque especial */}
+          {/* Branding row */}
           <div className="ct-row ct-row--branding">
             <div className="ct-cell feature-name">
               Branding
@@ -66,6 +75,7 @@ export default function ComparisonTable() {
             </div>
           </div>
 
+          {/* Price row */}
           <div className="ct-row ct-price-row">
             <div className="ct-cell feature-name" style={{ fontWeight: 500 }}>Investimento mensal</div>
             <div className="ct-cell center">
@@ -78,44 +88,59 @@ export default function ComparisonTable() {
         </Reveal>
 
         <style>{`
+          /* Números volumétricos em Cormorant */
+          .ct-serif {
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-weight: 300;
+            font-size: clamp(22px, 3vw, 30px) !important;
+            letter-spacing: 0.02em;
+          }
+          .ct-unit {
+            font-family: 'Outfit', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            color: rgba(184,175,166,0.5);
+          }
+
+          /* Branding row */
           .ct-row--branding {
             background: rgba(201,169,110,0.05);
-            border-top: 1px solid rgba(201,169,110,0.18) !important;
-            border-bottom: 1px solid rgba(201,169,110,0.18) !important;
+            border-top: 1px solid rgba(201,169,110,0.15) !important;
+            border-bottom: 1px solid rgba(201,169,110,0.15) !important;
           }
           .ct-branding-sub {
             display: block;
             font-size: 10px;
-            letter-spacing: 0.12em;
-            color: rgba(201,169,110,0.45);
+            letter-spacing: 0.1em;
+            color: rgba(201,169,110,0.4);
             text-transform: uppercase;
-            margin-top: 3px;
+            margin-top: 4px;
             font-family: 'Outfit', sans-serif;
           }
           .ct-branding-price {
             display: block;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(18px, 2.5vw, 24px);
             color: #C9A96E;
-            font-weight: 400;
+            font-weight: 300;
             line-height: 1.2;
           }
           .ct-branding-label {
             display: block;
             font-size: 10px;
             letter-spacing: 0.1em;
-            color: rgba(184,175,166,0.4);
+            color: rgba(184,175,166,0.38);
             text-transform: uppercase;
-            margin-top: 3px;
+            margin-top: 4px;
             font-family: 'Outfit', sans-serif;
           }
-          .ct-price-row {
-            background: rgba(10,3,5,0.3);
-          }
+
+          /* Price row */
+          .ct-price-row { background: rgba(10,3,5,0.3); }
           .ct-price-highlight {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
-            font-weight: 400;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(20px, 2.8vw, 28px);
+            font-weight: 300;
             letter-spacing: 0.02em;
           }
           .eter-price { color: #C9A96E; }
